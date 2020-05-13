@@ -1,0 +1,489 @@
+===========================Fri May  8 09:20:31 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : cannot import name 'BasicSoftwareIoPlugin' from 'plugins.BasicSoftwareIoPlugin' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\BasicSoftwareIoPlugin.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'BasicSoftwareIoPlugin' from 'plugins.BasicSoftwareIoPlugin' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\BasicSoftwareIoPlugin.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 5 in <module>>
+===========================Fri May  8 09:21:52 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 6 in <module>>
+===========================Fri May  8 09:22:02 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:22:03 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:22:18 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'BasicSoftwareConsts'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'BasicSoftwareConsts'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 3 in <module>>
+===========================Fri May  8 09:22:35 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:22:36 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:23:01 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'ProphetConsts'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'ProphetConsts'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 26 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglObjectFactory.py, line 14 in <module>>
+===========================Fri May  8 09:23:11 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:23:12 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:24:09 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'OglTry'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'OglTry'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 8 in <module>>
+===========================Fri May  8 09:24:18 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:24:18 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:41:12 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'OglTry'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'OglTry'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 8 in <module>>
+===========================Fri May  8 09:41:40 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:41:41 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:41:49 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'OglTry'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'OglTry'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 8 in <module>>
+===========================Fri May  8 09:42:20 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'OglTry'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'OglTry'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 8 in <module>>
+===========================Fri May  8 09:44:52 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : cannot import name 'OglProcess' from 'OglProcess' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglProcess.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'OglProcess' from 'OglProcess' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglProcess.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 9 in <module>>
+===========================Fri May  8 09:45:29 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : No module named 'BasicSoftwareConsts'
+
+---------------------------
+Error : <class 'ModuleNotFoundError'>
+Msg   : No module named 'BasicSoftwareConsts'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 12 in <module>>
+===========================Fri May  8 09:45:54 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : cannot import name 'displayWarning' from 'BasicSoftware' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftware.pyw)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'displayWarning' from 'BasicSoftware' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftware.pyw)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 27 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\OglLinkFactory.py, line 13 in <module>>
+===========================Fri May  8 09:46:40 2020Fatal error : Import module Error: Error importing plugin [IoXml] with messageError importing plugin [IoXml] with message
+
+The following error occured : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+
+---------------------------
+Error : <class 'ImportError'>
+Msg   : cannot import name 'getMediator' from 'mediator' (C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoXml.py, line 4 in <module>>
+===========================Fri May  8 09:47:47 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'IoPython' object has no attribute 'getOutputFormat'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'IoPython' object has no attribute 'getOutputFormat'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 134 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 108 in getOutputPlugins>
+===========================Fri May  8 09:48:37 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'FileHandling' object has no attribute '_onNotebookPageChanged'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 149 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 31 in __init__>
+===========================Fri May  8 09:49:52 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+
+---------------------------
+Error : <class 'AssertionError'>
+Msg   : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 154 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\Ctrl_Manager.py, line 27 in getController>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\singleton.py, line 41 in __new__>
+===========================Fri May  8 09:59:50 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+
+---------------------------
+Error : <class 'AssertionError'>
+Msg   : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 154 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\Ctrl_Manager.py, line 27 in getController>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\singleton.py, line 41 in __new__>
+===========================Fri May  8 10:40:16 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+
+---------------------------
+Error : <class 'AssertionError'>
+Msg   : Error, your singleton class <class 'Ctrl_Manager.Ctrl_Manager'> cannot contain a __init__ method.
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 154 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\Ctrl_Manager.py, line 27 in getController>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\singleton.py, line 41 in __new__>
+===========================Fri May  8 10:41:16 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : 'RibbonFrame' object has no attribute 'SetAccelerator'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'RibbonFrame' object has no attribute 'SetAccelerator'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 159 in __init__>
+===========================Fri May  8 10:43:53 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : getOutputFormat() takes 1 positional argument but 2 were given
+
+---------------------------
+Error : <class 'TypeError'>
+Msg   : getOutputFormat() takes 1 positional argument but 2 were given
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 165 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 665 in makeExportMenu>
+===========================Fri May  8 10:45:11 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : module 'BasicSoftwareConst' has no attribute 'DefaultFilename'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : module 'BasicSoftwareConst' has no attribute 'DefaultFilename'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 168 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\FileHandling.py, line 192 in newProject>
+===========================Fri May  8 10:46:46 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : can only concatenate str (not "int") to str
+
+---------------------------
+Error : <class 'TypeError'>
+Msg   : can only concatenate str (not "int") to str
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 169 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\mediator.py, line 718 in updateTitle>
+===========================Fri May  8 10:47:30 2020Fatal error : BasicSoftware.AfterSplash Error: Failed to launch the qfterSplash screenFailed to launch the qfterSplash screen
+
+The following error occured : 'RibbonFrame' object has no attribute 'show'
+
+---------------------------
+Error : <class 'AttributeError'>
+Msg   : 'RibbonFrame' object has no attribute 'show'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 63 in _AfterSplash>
+===========================Fri May  8 10:49:00 2020Fatal error : BasicSoftware.AfterSplash Error: Failed to launch the qfterSplash screenFailed to launch the qfterSplash screen
+
+The following error occured : 'bool' object is not callable
+
+---------------------------
+Error : <class 'TypeError'>
+Msg   : 'bool' object is not callable
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 65 in _AfterSplash>
+===========================Fri May  8 11:44:27 2020Warning : No undo: No current project to undoNo current project to undo
+
+The following error occured : None
+
+---------------------------
+===========================Fri May  8 12:00:20 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : Frame(): arguments did not match any overloaded call:
+  overload 1: too many arguments
+  overload 2: argument 5 has unexpected type 'int'
+
+---------------------------
+Error : <class 'TypeError'>
+Msg   : Frame(): arguments did not match any overloaded call:
+  overload 1: too many arguments
+  overload 2: argument 5 has unexpected type 'int'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 30 in __init__>
+===========================Fri May  8 12:01:24 2020Fatal error : BasicSoftwareApp.OnInit Error: Failed to init the softwareFailed to init the software
+
+The following error occured : Frame(): arguments did not match any overloaded call:
+  overload 1: too many arguments
+  overload 2: argument 5 has unexpected type 'int'
+
+---------------------------
+Error : <class 'TypeError'>
+Msg   : Frame(): arguments did not match any overloaded call:
+  overload 1: too many arguments
+  overload 2: argument 5 has unexpected type 'int'
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareApp.py, line 42 in OnInit>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\AppFrame.py, line 30 in __init__>
+===========================Mon May 11 04:00:49 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:03:29 2020Warning : Warning in title definition: The title of a test must start by test_ otherwise basicSoftware will not handle your test 
+Your title will be consider has a function declarationThe title of a test must start by test_ otherwise basicSoftware will not handle your test 
+Your title will be consider has a function declaration
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:03:36 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:07:14 2020Warning : Warning in title definition: The title of a test must start by test_ otherwise basicSoftware will not handle your test 
+Your title will be consider has a function declarationThe title of a test must start by test_ otherwise basicSoftware will not handle your test 
+Your title will be consider has a function declaration
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:07:17 2020Fatal error : CreateOglObjectCommand.createTItle: Unknown returnAction value : NoneUnknown returnAction value : None
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:07:30 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:30:41 2020Warning : 6: Unknown type of OglObject into factory :Unknown type of OglObject into factory :
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 04:34:48 2020Fatal error : Import module Error: Error importing plugin [IoPython] with messageError importing plugin [IoPython] with message
+
+The following error occured : invalid syntax (OglObjectFactory.py, line 72)
+
+---------------------------
+Error : <class 'SyntaxError'>
+Msg   : invalid syntax (OglObjectFactory.py, line 72)
+Trace :
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\PluginManager.py, line 44 in __init__>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\plugins\IoPython.py, line 8 in <module>>
+<FrameSummary file C:\Users\wilfr\Documents\GitHub\ribbon_framework\new_src\BasicSoftwareXmlV10.py, line 26 in <module>>
+===========================Mon May 11 04:37:35 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 05:33:25 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 05:57:51 2020Warning : No undo: No current project to undoNo current project to undo
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 12:05:53 2020Warning : No undo: No current project to undoNo current project to undo
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 14:05:40 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 15:41:24 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 16:07:30 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Mon May 11 16:13:15 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
+===========================Tue May 12 09:55:24 2020Warning : Save changes ?: Your diagram has not been saved! Would you like to save it?Your diagram has not been saved! Would you like to save it?
+
+The following error occured : None
+
+---------------------------
