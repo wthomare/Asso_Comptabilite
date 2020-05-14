@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import commandGroup
 from historyUtils import getTokenValue, HISTORY_FILE_NAME, GROUP_COMMENT_ID
-import BasicSoftwareUtils
+import AssoComptaUtils
 
 [upDate, create, delete, copy]=range(4)
 
@@ -34,7 +34,7 @@ class HistoryManager(object):
         try:
             saveFile = open(self._fileName, 'w').close()
         except PermissionError:
-            BasicSoftwareUtils.displayError("Permission Error. The History file [%s] is opened by a tier" %(self._fileName), "HistoryManager.__init__ Error")
+            AssoComptaUtils.displayError("Permission Error. The History file [%s] is opened by a tier" %(self._fileName), "HistoryManager.__init__ Error")
         #number of groups added to the histroy
         self._groupCount = 0
 
@@ -96,7 +96,7 @@ class HistoryManager(object):
             elif action == upDate:
                 group.upDate(fileContent[self._groupToUndo])
             else:
-                BasicSoftwareUtils.displayError("Unknow action type [%s]" %action, "HistoryManager.redo Error")
+                AssoComptaUtils.displayError("Unknow action type [%s]" %action, "HistoryManager.redo Error")
 
     def execute(self):
         """
@@ -125,7 +125,7 @@ class HistoryManager(object):
         elif 'Copy' in grpComment:
             action = copy
         else:
-            BasicSoftwareUtils.displayWarning("Unknow action in the history manager", "HistoryManager._unserialize Warning")
+            AssoComptaUtils.displayWarning("Unknow action in the history manager", "HistoryManager._unserialize Warning")
         
         #create an initialized group with only its comment
         group = commandGroup.CommandGroup(grpComment)
@@ -281,4 +281,4 @@ class HistoryManager(object):
                 return None
         except:
             msg = "Failed to _findOldGroup in the HistoryManager"
-            BasicSoftwareUtils.displayWarning(msg, 'HistoryManager._findOldGroup Warning')
+            AssoComptaUtils.displayWarning(msg, 'HistoryManager._findOldGroup Warning')

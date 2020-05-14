@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import BasicSoftwareUtils 
+import AssoComptaUtils 
 
-from BasicSoftwareProject import BasicSoftwareProject
-import BasicSoftwareConst
+from AssoComptaProject import BasicSoftwareProject
+import AssoComptaConst
 import wx
 
 [ALL, PARTIAL] = range(2)
@@ -28,9 +28,9 @@ class FileHandling:
         self._projectTree = projectTree
         self._notebook = notebook
         self._projectTreeRoot = projectTreeRoot
-        self._notebook.Bind(wx.aui.EVT_AUINOTEBOOK_PAGE_CHANGED, self._onNotebookPageChanged)
+        # self._notebook.Bind(wx.aui.EVT_AUINOTEBOOK_PAGE_CHANGED, self._onNotebookPageChanged)
         self._projectTree.Bind(wx.EVT_TREE_SEL_CHANGED, self._onProjectTreeSelChanged)
-        self._notebook.Bind(wx.aui.EVT_AUINOTEBOOK_BUTTON, self.onCloseCurrentPage)
+        # self._notebook.Bind(wx.aui.EVT_AUINOTEBOOK_BUTTON, self.onCloseCurrentPage)
         
         self._notebookCurrentPage = -1
         
@@ -58,25 +58,25 @@ class FileHandling:
         return False
     
     def isDefaultFileName(self, filename):
-        return filename == BasicSoftwareConst.DefaultFileName
+        return filename == AssoComptaConst.DefaultFileName
     
     def openFile(self, filename, project=None):
         
         if not self.isDefaultFileName(filename) and self.isProjectLoaded(filename):
-            BasicSoftwareUtils.displayError(("The selected file is already loaded"))
+            AssoComptaUtils.displayError(("The selected file is already loaded"))
             return False
         
         if not project:
-            project = BasicSoftwareProject(BasicSoftwareConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
+            project = AssoComptaProject(BasicSoftwareConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
         
         try:
             if not project.loadFromFilename(filename):
-                BasicSoftwareUtils.displayError(("The specified file can't be loaded !"))
+                AssoComptaUtils.displayError(("The specified file can't be loaded !"))
                 return False
             self._projects.append(project)
             self._currentProject = project
         except:
-            BasicSoftwareUtils.displayError(("An error occured while loading the project"))
+            AssoComptaUtils.displayError(("An error occured while loading the project"))
             return False
         
         try:
@@ -87,12 +87,12 @@ class FileHandling:
             if len(project.getDocuments())>0:
                 self._currentFrame = project.getDocuments()[0].getFrame()
         except:
-            BasicSoftwareUtils.displayError(("An error occured while adding the project to the notebook"))
+            AssoComptaUtils.displayError(("An error occured while adding the project to the notebook"))
             
     
     def openText(self, xmlString):
         
-        project = BasicSoftwareProject(BasicSoftwareConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
+        project = AssoComptaProject(BasicSoftwareConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
         
         try:
             if not project.loadFromText(xmlString):
@@ -101,7 +101,7 @@ class FileHandling:
             self._projects.append(project)
             self._currentProject = project
         except:
-            BasicSoftwareUtils.displayError(("An error occured while loading the project"))
+            AssoComptaUtils.displayError(("An error occured while loading the project"))
             
             
         try:
@@ -112,7 +112,7 @@ class FileHandling:
             if len(project.getDocuments()) > 0:
                 self._currentFrame = project.getDocuments()[0].getFrame()
         except:
-            BasicSoftwareUtils.displayError(("An error occured while adding the porject to the notebook"))
+            AssoComptaUtils.displayError(("An error occured while adding the porject to the notebook"))
             return False
         return True
     
@@ -122,7 +122,7 @@ class FileHandling:
         nbInitialDocuments = len(project.getDocuments())
         
         if not project.insertPorject(filename):
-            BasicSoftwareUtils.displayError(("The specified file can't be loaded"))
+            AssoComptaUtils.displayError(("The specified file can't be loaded"))
             return False
         
         try:
@@ -131,7 +131,7 @@ class FileHandling:
             self._notebookCurrentPage = self._notebook.GetPageCount() -1
             self._notebook.SetSelection(self._notebookCurrentPage)
         except:
-            BasicSoftwareUtils.displayError(("An error occured while adding the project to the notebook"))
+            AssoComptaUtils.displayError(("An error occured while adding the project to the notebook"))
             return False
         
         if len(project.getDocuments()) > nbInitialDocuments:
@@ -140,7 +140,7 @@ class FileHandling:
     def saveFile(self):
         currentProject = self._currentProject
         if not currentProject:
-            BasicSoftwareUtils.displayError(("No diagram to save"))
+            AssoComptaUtils.displayError(("No diagram to save"))
             return False
         
         if not currentProject.getFilename() or currentProject.getFilename()==BasicSoftwareConst.DefaultFileName:
@@ -151,7 +151,7 @@ class FileHandling:
     def saveFileAs(self):
         
         if not self._ctrl.getDiagram():
-            BasicSoftwareUtils.displayError(("No diagram to save"))
+            AssoComptaUtils.displayError(("No diagram to save"))
             return
         
         filenameOK = False
@@ -165,7 +165,7 @@ class FileHandling:
             
             if len([project for project in self._projects if project.getFilename() == filename])>0:
                 msg = ("Error! The filename %s correspond to a project which is currently opened!" %(str(filename)))
-                BasicSoftwareUtils.displayError(msg, ("Save change, filename Error"))
+                AssoComptaUtils.displayError(msg, ("Save change, filename Error"))
                 return
             filenameOK = True
 
@@ -181,7 +181,7 @@ class FileHandling:
                 if frame in project.getFrames():
                     self._notebook.SetPageText(i, document.getDiagramTitle())
             else:
-                BasicSoftwareUtils.displayError(("Not updating notebook in FileHandling"), "Warning")
+                AssoComptaUtils.displayError(("Not updating notebook in FileHandling"), "Warning")
                 
         self._parent.updateCurrentDir(dlg.GetPath())
         project.setModified(False)
@@ -189,7 +189,7 @@ class FileHandling:
         return True
     
     def newProject(self):
-        project = BasicSoftwareProject(BasicSoftwareConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
+        project = BasicSoftwareProject(AssoComptaConst.DefaultFileName, self._notebook, self._projectTree, self._projectTreeRoot)
         self._projects.append(project)
         self._currentProject = project
         self._currentFrame = None
@@ -352,7 +352,7 @@ class FileHandling:
                     frame.SetFocus()
                     wx.Yield()
                     self.showFrame(frame)
-                dlg = BasicSoftwareUtils.displayWarning(("Your diagram has not been saved! Would you like to save it?"), ('Save changes ?'))
+                dlg = AssoComptaUtils.displayWarning(("Your diagram has not been saved! Would you like to save it?"), ('Save changes ?'))
                 if dlg == wx.CANCEL:
                     self.clearVariable(ALL)
                     return False
@@ -371,7 +371,7 @@ class FileHandling:
         if self._currentProject is None and self._currentFrame is not None:
             self._currentProject = self.getProjectFromFrame(self._currentFrame)
         if self._currentProject is None:
-            BasicSoftwareUtils.displayError(("No frame to close !"), ("Error..."))
+            AssoComptaUtils.displayError(("No frame to close !"), ("Error..."))
             return
 
         # Close the file
@@ -413,11 +413,11 @@ class FileHandling:
         if not self._currentProject and self._currentFrame:
             self._currentProject = self.getProjectFromFrame(self._currentFrame)
         if not self._currentProject:
-            BasicSoftwareUtils.displayError(('No frame to close !') ('onCloseCurrentPage error'))
+            AssoComptaUtils.displayError(('No frame to close !') ('onCloseCurrentPage error'))
             return False
         
         if self._currentProject.getModified() and len(self._currentFrame.GetDiagram().GetShapes()) !=0:
-            dlg = BasicSoftwareUtils.displayWarning(('Your project has not been saved. Would you like to save it'), ('Save changes ?'))
+            dlg = AssoComptaUtils.displayWarning(('Your project has not been saved. Would you like to save it'), ('Save changes ?'))
             if dlg == wx.CANCEL:
                 return False
             elif dlg==wx.YES:

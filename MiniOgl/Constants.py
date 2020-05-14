@@ -1,0 +1,3 @@
+# -*- coding: utf-8 -*-
+
+[ SKIP_EVENT, EVENT_PROCESSED, TRACK_MOVE, NO_SHAPE, MEDIATOR_SKIP,] = range(5)

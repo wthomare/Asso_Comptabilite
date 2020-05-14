@@ -7,37 +7,12 @@ import ErrorManager
 import mediatorParameter
 
 from singleton                import Singleton
-from MiniOgl                  import Constants
-from MiniOgl.ControlPoint     import ControlPoint
-from MiniOgl.LinePoint        import LinePoint
 
 
-import BasicSoftwareUtils
-from BasicSoftwareConst      import OBJECT_NAME
+import AssoComptaUtils
+from AssoComptaConst      import OBJECT_NAME
 
-from basicSoftwareXML.main import BasicSoftwareXML
 
-from DlgEditNote import DlgEditNote
-from DlgEditTitle import DlgEditTitle
-from DlgEditFOR import DlgEditFOR
-from DlgEditWHILE import DlgEditWHILE
-from DlgEditLink import DlgEditLink
-from DlgEditState import DlgEditState
-#from DlgInstance import DlgInstance
-from DlgEditStatement import DlgEditStatement
-from DlgEditModify import DlgEditModify
-from DlgEditCancel import DlgEditCancel
-from DlgEditTry import DlgEditTry
-from DlgEditFixInit import DlgEditFixInit
-from DlgEditFixStart import DlgEditFixStart
-from DlgEditFixSetup import DlgEditFixSetup
-from DlgEditFixFlush import DlgEditFixFlush
-from DlgEditFixExpect import DlgEditFixExpect
-from DlgEditFixAdd import DlgEditFixAdd
-from DlgEditFixRemove import DlgEditFixRemove
-from DlgEditFixWait import DlgEditFixWait
-from DlgEditLog import DlgEditLog
-from DlgEditProcess import DlgEditProcess
 
 def get_mediator():
     return Mediator()
@@ -168,7 +143,7 @@ class Mediator(Singleton):
         
         from commandGroup import CommandGroup
         if self._currentAction == mediatorParameter.ACTION_SELECTOR:
-            return Constants.SKIP_EVENT
+            return None
         
         elif self._currentAction in SuperObject:
             from createOglObjectCommand import CreateOglObjectCommand
@@ -198,14 +173,14 @@ class Mediator(Singleton):
                 umlFrame.getHistory().addCommandGroup(cmdGroup)
             self._currentAction = mediatorParameter.ACTION_SELECTOR
         elif self._currentAction == mediatorParameter.ACTION_ZOOM_IN:
-            return Constants.SKIP_EVENT
+            return None
         elif self._currentAction == mediatorParameter.ACTION_ZOOM_OUT:
             umlFrame.DoZoomOut(x, y)
             umlFrame.Refresh()
             self.updateTitle()
         else:
-            return Constants.SKIP_EVENT
-        return Constants.EVENT_PROCESSED
+            return None
+        return 1
         
     # ------------------------------------------------------------------------- 
     def shapeSelected(self, shape, position=True):
@@ -222,7 +197,7 @@ class Mediator(Singleton):
             self._currentAction = mediatorParameter.NEXT_ACTIONS[self._currentAction]
             
             if not shape:
-                BasicSoftwareUtils.displayError('Action cancelled \nno source')
+                AssoComptaUtils.displayError('Action cancelled \nno source')
                 self._currentAction = mediatorParameter.ACTION_SELECTOR
             else:
                 self._src = shape
@@ -232,7 +207,7 @@ class Mediator(Singleton):
             self._dst = shape
             self._dstPos = position
             if not self._dst:
-                BasicSoftwareUtils.displayError('Action cancelled \nno destination', 'mediator.doAction')
+                AssoComptaUtils.displayError('Action cancelled \nno destination', 'mediator.doAction')
                 self._currentAction = mediatorParameter.ACTION_SELECTOR
                 return
             
@@ -262,7 +237,7 @@ class Mediator(Singleton):
                     umlFrame.Refresh()
                 except:
                     msg = "Failed to create link or to register it in the history manager"
-                    BasicSoftwareUtils.displayError(msg, 'mediator.shapeSelected error')
+                    AssoComptaUtils.displayError(msg, 'mediator.shapeSelected error')
                     
             self._src, self._dst = None, None
             
@@ -282,190 +257,7 @@ class Mediator(Singleton):
         """
         return self._currentAction != mediatorParameter.ACTION_SELECTOR                
                 
-    # ------------------------------------------------------------------------- 
-    def editObject(self, x, y):
-        """
-        Edit the object at x, y.
-
-        """           
-                
-        umlFrame = self._fileHandling.getCurrentFrame()
-        if not umlFrame: return
-
-        from OglNote import OglNote
-        from OglTitle import OglTitle
-        from OglFor import OglFor
-        from OglWhile import OglWhile
-        from OglCreateOrder import OglCreateOrder
-        from OglExpectedState import OglExpectedState
-        from OglStatement import OglStatement
-        from OglModify import OglModify
-        from OglCancel import OglCancel
-        from OglTry import OglTry
-        from OglFixLog import OglFixLog
-        from OglImport import OglImport
-        from OglLog import OglLog
-        from OglSDInstance import OglSDInstance, OglInstanceRectangleShape, OglInstanceName
-        from OglProcess import OglProcess
-        from OglNoteLink import OglNoteLink
-        from OglTitleEnd import OglTitleEnd
-        from MiniOgl.SizerShape import SizerShape
-        
-        Object = umlFrame.FindShape(x, y)
-        if not Object: return
-        rep = None
-        
-        if isinstance(Object, (OglInstanceRectangleShape)):
-            BasicSoftwareObject = Object.basicSoftwareObject()
-        else:
-            BasicSoftwareObject = Object.getBasicSoftwareObject()
-            
-        if isinstance(Object, OglNote):
-            dlg = DlgEditNote(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()
-        elif isinstance(Object, OglTitle):
-            dlg = DlgEditTitle(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()           
-        elif isinstance(Object, OglFor):
-            dlg = DlgEditFOR(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()              
-        elif isinstance(Object, OglWhile):
-            dlg = DlgEditWHILE(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()              
-        elif isinstance(Object, OglExpectedState):
-            dlg = DlgEditState(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()
-        elif isinstance(Object, OglProcess):
-            dlg = DlgEditProcess(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()   
-        elif isinstance(Object, OglCreateOrder):
-            dlg = DlgEditLink(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()                 
-        elif isinstance(Object, OglStatement):
-            dlg = DlgEditStatement(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()                 
-        elif isinstance(Object, OglModify):
-            dlg = DlgEditModify(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()
-        elif isinstance(Object, OglCancel):
-            dlg = DlgEditCancel(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()    
-        elif isinstance(Object, OglTry):
-            dlg = DlgEditTry(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            dlg.ShowModal()
-            rep = dlg.getReturnAction()
-            if rep == -1:
-                Object.Detach()    
-        elif isinstance(Object, OglFixLog):
-            function = BasicSoftwareObject.getFunction()
-            if function == 'Init':
-                dlg = DlgEditFixInit(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()
-            elif function == 'Start':
-                dlg = DlgEditFixStart(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()            
-            elif function == 'Setup':
-                dlg = DlgEditFixSetup(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()   
-            elif function == 'Stop':
-                pass
-            elif function == 'Flush':
-                dlg = DlgEditFixFlush(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()           
-            elif function == 'Expect':
-                dlg = DlgEditFixExpect(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                dlg.Destroy()
-            elif function == 'Add':
-                dlg = DlgEditFixAdd(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()                       
-            elif function == 'Remove':
-                dlg = DlgEditFixRemove(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()   
-            elif function == 'Wait':
-                dlg = DlgEditFixWait(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-                rep = dlg.getReturnAction()
-                dlg.Destroy()
-                if rep == wx.ID_NO:
-                    Object.Detach()
-            else:
-                BasicSoftwareUtils.displayError('Not a fixlog function', 'Edit Object warning')
-        elif isinstance(Object, OglLog):
-            dlg = DlgEditLog(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            rep = dlg.getReturnAction()
-            if rep == wx.ID_NO:
-                Object.Detach()               
-        elif isinstance(Object, OglImport):
-            xml_path = BasicSoftwareObject.getPath()
-            app = wx.App(redirect=False)
-            BasicSoftwareXML(default_xml_path=xml_path)
-            app.MainLoop()
-        elif isinstance(Object, OglSDInstance):
-            #dlg = DlgInstance(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            #dlg.ShowModal()
-            #rep = dlg.getReturnAction()
-            #if rep == wx.ID_NO:
-            #    Object.Detach()
-            pass
-        elif isinstance(Object, (OglInstanceRectangleShape, OglInstanceName)):
-            #dlg = DlgInstance(umlFrame, wx.ID_ANY, BasicSoftwareObject)
-            #dlg.ShowModal()
-            #rep = dlg.getReturnAction()
-            #if rep == wx.ID_NO:
-            #    parentObject = self.getOglSDInstance(BasicSoftwareSDInstance = BasicSoftwareObject)
-            #    parentObject.Detach()
-            pass
-        elif isinstance(Object, (OglNoteLink, OglTitleEnd, SizerShape)):
-            rep=-1
-        else:
-            BasicSoftwareUtils.displayWarning('[%s] is an unknow Ogl Object' %Object, 'Edit Object Error')
-        
-        self.upDateHistoryManager(Object, rep)
-        umlFrame.Refresh()
-        
-        
+    
     # ------------------------------------------------------------------------- 
     def getUmlObjects(self):
         """
@@ -562,7 +354,7 @@ class Mediator(Singleton):
         if c in func:
             func(c)()
         else:
-            BasicSoftwareUtils.displayWarning("Not Supported : [%s]"%c, 'mediator.processChar error')
+            AssoComptaUtils.displayWarning("Not Supported : [%s]"%c, 'mediator.processChar error')
             event.Skip()
             
     # ------------------------------------------------------------------------- 
@@ -611,7 +403,7 @@ class Mediator(Singleton):
                     elif azimut == "East":
                         shape.SetPosition(x+10,y)
                     else:
-                        BasicSoftwareUtils.displayError("Error in the azimut value", "moveOglObject error")
+                        AssoComptaUtils.displayError("Error in the azimut value", "moveOglObject error")
         umlFrame.Refresh()
         
     # ------------------------------------------------------------------------- 
@@ -647,7 +439,7 @@ class Mediator(Singleton):
                 elif isinstance(shape, OglObject):
                     cmd = DelOglObjectCommand(shape)
             except Exception:
-                BasicSoftwareUtils.displayError("Failed to delete the shape : [%s]" %shape, "mediator.deleteSelectedShape error")
+                AssoComptaUtils.displayError("Failed to delete the shape : [%s]" %shape, "mediator.deleteSelectedShape error")
                 
             if cmd:
                 cmdGroup.addCommand(cmd)
@@ -661,40 +453,7 @@ class Mediator(Singleton):
                 umlFrame.getHistory().addCommandGroup(cmdGroup)
                 self._fileHandling.getCurrentFrame().getHistory()._groupToUndo -=1
                 umlFrame.Refresh()
-                
-    # ------------------------------------------------------------------------- 
-    def insertSelectedShape(self):
-        umlFrame = self._fileHandling.getCurrentFrame()
-        if umlFrame is None: return
-        selected = umlFrame.GetSelectedShapes()
-        if len(selected) != 1:
-            return
-        selected = selected.pop()
-        if isinstance(selected, LinePoint):
-            px, py = selected.GetPosition()
-            line = selected.GetLines()[0]
-            if line.GetSource().GetParent() is \
-                line.GetDestination().GetParent():
-                cp = ControlPoint(0, 0, line.GetSource().GetParent())
-                cp.SetPosition(px + 20, py + 20)
-            else:
-                cp = ControlPoint(px + 20, py + 20)
-            line.AddControl(cp, selected)
-            umlFrame.GetDiagram().AddShape(cp)
-            umlFrame.Refresh()
-            
-    # ------------------------------------------------------------------------- 
-    def getOglSDInstance(self, basicSoftwareSDInstance):
-        from OglSDInstance import OglSDInstance
-        po = [po for po in self.getUmlObjects() if isinstance(po, OglSDInstance) and po.getBasicSoftwareObject() is basicSoftwareSDInstance]
-        return po[0]
-    
-    # ------------------------------------------------------------------------- 
-    def getOglNote(self, basicSoftwareNote):
-        from OglNote import OglNote
-        po = [po for po in self.getUmlObjects() if isinstance(po, OglNote) and po.getBasicSoftwareObject() is basicSoftwareNote]
-        return po[0]
-    
+
 
     # ------------------------------------------------------------------------- 
     def getFileHandling(self):
@@ -806,7 +565,7 @@ class Mediator(Singleton):
             self._fileHandling.getCurrentFrame().getHistory._groupToUndo -=1
             return
         else:
-            BasicSoftwareUtils.displayWarning("This Ogl Object can't be modify", 'upDateHistoryManager warning')
+            AssoComptaUtils.displayWarning("This Ogl Object can't be modify", 'upDateHistoryManager warning')
             
             
             

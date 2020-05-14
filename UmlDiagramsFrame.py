@@ -2,15 +2,14 @@
 
 import wx
 import mediator
-import Ctrl_Manager
+#import Ctrl_Manager
 import mediatorParameter
 
-from OglStatement import OglStatement
+
 from MiniOgl.DiagramFrame import DiagramFrame
 from MiniOgl.Constants import SKIP_EVENT
 from historyManager import HistoryManager
-from OglLink import OglLink
-from OglObject import OglObject
+
 
 DEFAULT_WIDTH = 3000
 wx.InitAllImageHandlers()
@@ -21,7 +20,7 @@ class UmlDiagramsFrame(DiagramFrame):
         DiagramFrame.__init__(self, parent)
         
         self._ctrl = mediator.get_mediator()
-        self._ctrlVP = Ctrl_Manager.getController()
+        # self._ctrlVP = Ctrl_Manager.getController()
 
         self.maxWidth = DEFAULT_WIDTH
         self.maxHeight = int(self.maxWidth / 1.41)
@@ -120,9 +119,6 @@ class UmlDiagramsFrame(DiagramFrame):
         if brush:
             shape.SetBrush(brush)
         self._diagram.AddLinkShape(shape, withModelUpdate)
-        
-    def getUmlObjects(self):
-        return[s for s in self._diagram.GetShapes() if isinstance(s, (OglObject, OglLink, OglStatement))]
         
     def getWidth(self):
         return self.maxWidth

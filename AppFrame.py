@@ -7,22 +7,21 @@ Created on Sat Mar 14 17:40:14 2020
 
 import wx
 import wx.ribbon as RB
-import wx.aui as AUI
+import wx.grid as gridlib
 
 import images
 import os
 
-from PluginManager import PluginManager
 from FileHandling import FileHandling
 
-from BasicSoftwareUtils import CreateBitmap, displayWarning
-from BasicSoftwarePrintout import Printout
-from BasicSoftwareConst import SEQUENCE_DIAGRAM
+from AssoComptaUtils import CreateBitmap, displayWarning
+from AssoComptaPrintout import Printout
+from AssoComptaConst import SEQUENCE_DIAGRAM
 
 from commandGroup import CommandGroup
 import mediator
 import mediatorParameter
-import Ctrl_Manager
+#import Ctrl_Manager
 
 
 class RibbonFrame(wx.Frame):
@@ -109,12 +108,15 @@ class RibbonFrame(wx.Frame):
         self._projectTree = wx.TreeCtrl(self._logwindow, wx.ID_ANY, style= wx.TR_DEFAULT_STYLE)
         self._projectTreeRoot = self._projectTree.AddRoot(("Root"))
         
+        self.myGrid = gridlib.Grid(self._logwindow)
+        self.myGrid.CreateGrid(12, 8)
+        
         # Diagram container
-        self._notebook=AUI.AuiNotebook(self._logwindow, wx.ID_ANY, style=wx.NB_FLAT)
+        # self._notebook=AUI.AuiNotebook(self._logwindow, wx.ID_ANY, style=wx.NB_FLAT)
         
         # Set splitter
         self._logwindow.SetMinimumPaneSize(20)
-        self._logwindow.SplitVertically(self._projectTree, self._notebook, sashPosition = 230)
+        self._logwindow.SplitVertically(self._projectTree, self.myGrid, sashPosition = 230)
         
         s = wx.BoxSizer(wx.VERTICAL)
         s.Add(self._ribbon, 0, wx.EXPAND)
@@ -131,15 +133,15 @@ class RibbonFrame(wx.Frame):
         self._ribbon.Realize()
 
         # Properties
-        self.plugMgr = PluginManager()
-        self.plugs = {}
-        plugs = self.plugMgr.getOutputPlugins()
+        #self.plugMgr = PluginManager()
+        #self.plugs = {}
+        #plugs = self.plugMgr.getOutputPlugins()
         
-        for i in range(len(plugs)):
-            obj = plugs[i](None, None)
-            if obj.getOutputFormat()[1] == "py":
-                Id = mediatorParameter.ID_EXPORTPYTHON
-                self.plugs[Id] = plugs[i]
+        #for i in range(len(plugs)):
+        #    obj = plugs[i](None, None)
+        #    if obj.getOutputFormat()[1] == "py":
+        #        Id = mediatorParameter.ID_EXPORTPYTHON
+        #        self.plugs[Id] = plugs[i]
                 
         self._lastDir = os.getcwd()
         
@@ -148,12 +150,12 @@ class RibbonFrame(wx.Frame):
         self._ctrl.registerAppFrame(self)
         
         # Load file Handler
-        self._fileHandling = FileHandling(self, self._ctrl, self._projectTree, self._projectTreeRoot, self._notebook)
+        self._fileHandling = FileHandling(self, self._ctrl, self._projectTree, self._projectTreeRoot, self.myGrid)
         self._ctrl.registerFileHandling(self._fileHandling)
         self._initPrinting()
         
         # Get the Ctrl+v Ctrl+P Manager
-        self._ctrlVP = Ctrl_Manager.getController()
+        # self._ctrlVP = Ctrl_Manager.getController()
         
         # Accelerator init
         acc = self._createAcceleratorTable()
@@ -164,7 +166,7 @@ class RibbonFrame(wx.Frame):
         self._currentDirectory = os.getcwd()
         self._ctrl.registerAppPath(self._currentDirectory)
         self.clipboard = []
-        self.makeExportMenu()
+
 
         # Set application title
         self._fileHandling.newProject()
@@ -669,23 +671,3 @@ class RibbonFrame(wx.Frame):
             return
         self._fileHandling.getCurrentFrame().getHistory().redo()
         
-    def makeExportMenu(self):
-        """
-        Make the export submenu.
-        """
-        plugs = self.plugMgr.getOutputPlugins()
-
-        for i in range(len(plugs)):
-            obj = plugs[i](None, None)
-            if obj.getOutputFormat()[1] == "py":
-                Id = mediatorParameter.ID_EXPORTPYTHON
-                self.Bind(RB.EVT_RIBBONTOOLBAR_CLICKED, self.OnExport, id=Id)
-                self.plugs[id] = plugs[i]
-    
-    def OnExport(self, event):
-        cl = self.plugs[event.GetId()]
-        obj = cl(self._ctrl.getUmlObjects(), self._ctrl.getUmlFrame())
-
-        wx.BeginBusyCursor()
-        obj.doExport()
-        wx.EndBusyCursor()        
